@@ -19,7 +19,7 @@ refs.stopBtn.addEventListener('click', stopRandom);
 let randomIntervalId = null;
 
 function setRandomColor() {
-  const randomBgColor = colors[randomIntegerFromInterval(0, colors.length)];
+  const randomBgColor = colors[randomIntegerFromInterval(0, colors.length-1)];
   refs.bodyEl.style.backgroundColor = `${randomBgColor}`;
   console.log(`${randomBgColor}`);
 }
