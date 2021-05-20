@@ -15,6 +15,7 @@ const refs = {
 
 refs.startBtn.addEventListener('click', startRandom);
 refs.stopBtn.addEventListener('click', stopRandom);
+refs.stopBtn.disabled = true;
 
 let randomIntervalId = null;
 
@@ -25,6 +26,8 @@ function setRandomColor() {
 }
 
 function startRandom() {
+  refs.startBtn.disabled = true;
+  refs.stopBtn.disabled = false;
   refs.startBtn.removeEventListener('click', startRandom);
   console.log('Старт');
 
@@ -38,6 +41,8 @@ function startRandom() {
 }
 
 function stopRandom() {
+  refs.startBtn.disabled = false;
+  refs.stopBtn.disabled = true;
   refs.startBtn.addEventListener('click', startRandom);
   console.log('Стоп');
 
